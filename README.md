@@ -4,7 +4,7 @@
 
 ## Built with 
 
-* [React](https://reactjs.org/docs/react-api.html) - The web framework used
+* [React](https://reactjs.org/docs/react-api.html) - View rendering of the application
 * [OpenWeatherMap](https://openweathermap.org/api) - Weather API
 
 ## Authors 
