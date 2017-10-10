@@ -7,8 +7,12 @@
 (2) npm install <br />
 (3) npm start (Project should automatically open up in browser window)<br />
 
-## Built with 
+## Built with
+```
+facebook trifecta to create a proper react environment
+```
 * [Flux](https://facebook.github.io/flux/docs/overview.html#content) - Flow FrameWork (optimized MVC pattern)
+* [Immutable](https://facebook.github.io/immutable-js/) - No modifying data once created
 * [React](https://reactjs.org/docs/react-api.html) - View rendering of the application
 * [OpenWeatherMap](https://openweathermap.org/api) - Weather API
 
