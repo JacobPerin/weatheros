@@ -5,5 +5,16 @@ import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<AppContainer />, document.getElementById('root'));
+class App extends React.Component{
+	render(){
+		return (
+				<div className="container">
+					<div>
+						<AppContainer />
+					</div>
+				</div>
+			)
+	}
+}
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
