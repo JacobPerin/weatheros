@@ -1,55 +1,34 @@
-var AppActionTypes = require('./AppActionTypes');
-var AppDispatcher = require('./AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var assign = Object.assign;
+import AppActionTypes from './AppActionTypes';
+import AppDispatcher from './AppDispatcher';
+import Immutable from 'immutable'
+import {ReduceStore} from 'flux/utils';
+import Counter from './Counter';
+import WeatherItems from './WeatherItems';
 
-var CHANGE_EVENT = 'change';
 
+class AppStore extends ReduceStore {
+  constructor(){
+    super(AppDispatcher);
+  }
 
-var weatherStore = {
-  weatherItems: []
-};
+  getInitialState(){
+    return Immutable.OrderedMap();
+  }
 
-var addItem = function(item){
-  weatherStore.weatherItems.push(item);
-};
-
-var removeItem = function(index){
-  weatherStore.weatherItems.splice(index, 1);
-}
-
-var AppStore = assign(EventEmitter.prototype, {
-  emitChange: function() {
-    this.emit(CHANGE_EVENT)
-  },
-
-  addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback)
-  },
-
-  removeChangeListener: function(callback){
-    this.removeListener(CHANGE_EVENT, callback)
-  },
-
-  dispatcherIndex: AppDispatcher.register(function(payload){
-    var action = payload.action;
+  reduce(state, action){
     switch(action.actionType){
       case AppActionTypes.ADD_DIV:
-        addItem(action.data);
-        AppStore.emit(CHANGE_EVENT);
-        break;
+        const id = Counter.increment();
+        return state.set(id, new WeatherItems({
+          id,
+          temp: action.temp,
+        }));
       case AppActionTypes.REMOVE_DIV:
-        removeItem(action.data);
-        AppStore.emit(CHANGE_EVENT);
-        break;
+        return state.delete(action.id);
       default:
-        return true;
+        return state;
     }
-  }),
-
-  getList: function() {
-    return weatherStore.weatherItems;
   }
-});
+}
 
-module.exports =  AppStore;
+export default new AppStore();

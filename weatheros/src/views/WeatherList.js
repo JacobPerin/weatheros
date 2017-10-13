@@ -1,33 +1,29 @@
-var React = require('react');
+import React from 'react';
 
+function WeatherList(props) {
 
-class WeatherList extends React.Component{
-	render() {
-		var styles = {
-			//Here Jake, do your bullshit.
-			listStyle: {
-
-			}
-		};
-		var WeatherItems = this.props.items.map(function(item, index){
-			return (
-				<li key={index} className="list-group-item" style={styles.listStyle}>
+	const onClick = (e) => {
+		props.onRemove(e.target.id)
+	}
+	const WeatherItems = [...props.weatherItems.values()].reverse().map(WeatherItem =>
+			(
+				<li key={WeatherItem.id} >
 					<span
-			            className="glyphicon glyphicon-remove"
-			            onClick={this.props.remove.bind(null, index)}>
+						id={WeatherItem.id}
+						className="glyphicon glyphicon-remove"
+			            onClick={onClick}>
 			        </span>
 			        <span >
-			            {item}
+			            {WeatherItem.temp}
 			        </span>
 			    </li>
-		    )
-		}.bind(this));
-		return (
-	    	<ul >
-	    	    {WeatherItems}
-	    	</ul>
-		)
-	}
+	));
+	return (
+		<section id="list">
+    	<ul id="weatherList">
+    	    {WeatherItems}
+    	</ul>
+    	</section>
+	);
 }
-
-module.exports = WeatherList;
+export default WeatherList;

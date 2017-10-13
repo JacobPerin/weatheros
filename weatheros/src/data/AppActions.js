@@ -1,20 +1,20 @@
-var AppActionTypes = require('./AppActionTypes');
-var AppDispatcher = require('./AppDispatcher');
+import AppActionTypes from './AppActionTypes';
+import AppDispatcher from './AppDispatcher';
 
-var AppActions = {
-	addDiv: function(item) {
-		AppDispatcher.handleViewAction({
+const AppActions = {
+	addDiv(temp) {
+		AppDispatcher.dispatch({
 			actionType : AppActionTypes.ADD_DIV,
-			data: item,
+			temp,
 		});
 	},
 
-	removeDiv: function(index){
-		AppDispatcher.handleViewAction({
+	removeDiv(id){
+		AppDispatcher.dispatch({
 			actionType: AppActionTypes.REMOVE_DIV,
-			data: index
-		})
-	}
+			id,
+		});
+	},
 };
 
-module.exports = AppActions;
+export default AppActions;
