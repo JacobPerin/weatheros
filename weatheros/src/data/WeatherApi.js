@@ -2,22 +2,28 @@ import { Promsie } from 'es6-promise';
 import fetch from 'isomorphic-fetch';
 
 var WeatherApi = {
+
+
 	getWeatherObject: function(city) {
-		fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + city, {
-			method: 'GET',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify()
-		}).then(response =>{
+		var ApiKey = '23f3e0e1377031e7c41fde6f6da17f9b';
+		return fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + ApiKey)
+		.then(response =>{
+			var result = {
+					data: [],
+					fail: false,
+			};
 			if(response.ok){
-				var result = [];
-				response.json().then(data => {
-					result.data = data;
-				})
+					
+					return response.json().then(item =>{
+						result.data = item;
+						return result;
+					});
 			}
-		})
+			else{
+				result.fail = true;
+				return result;
+			}
+		}).catch(err => console.log(err));
 	}
 }
 
