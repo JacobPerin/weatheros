@@ -16,12 +16,15 @@ var SearchBar = (props) => {
 		props.onAdd(city);  
 	};
 
-
 		return (
 			<div>
-				<input type="text" id="textInput" value={props.draft} placeholder="City (ex. Ames)" onKeyDown={onKeyDown} />
+				<input 
+					type="text" id="textInput" 
+					value={props.draft} 
+					placeholder="City (ex. Ames)" 
+					onKeyDown={onKeyDown} />
 			</div>
-			);
+		);
 }
 
 export default SearchBar;

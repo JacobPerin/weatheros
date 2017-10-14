@@ -8,8 +8,8 @@ import './AppView.css';
 function AppView(props){
 	return (
 			<div>
-				<div className = "intwo">
-		          	<h1 className = "floatLeft"><span className = "blue">Weather</span><span class = "red">os</span></h1>
+				<div className = "infive">
+		          	<h1 className = "floatLeft"><span className = "blue">weather</span><span className = "red">os</span></h1>
 		        	<div className = "floatRight">
 		        		<SearchBar {...props} />
 		        	</div>
