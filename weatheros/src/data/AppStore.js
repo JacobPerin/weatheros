@@ -4,6 +4,8 @@ import Immutable from 'immutable'
 import {ReduceStore} from 'flux/utils';
 import Counter from './Counter';
 import WeatherItems from './WeatherItems';
+import weatherApi from './WeatherApi';
+
 
 
 class AppStore extends ReduceStore {
@@ -19,9 +21,10 @@ class AppStore extends ReduceStore {
     switch(action.actionType){
       case AppActionTypes.ADD_DIV:
         const id = Counter.increment();
+        var data = weatherApi.getWeatherObject(action.location);
         return state.set(id, new WeatherItems({
           id,
-          temp: action.temp,
+          location: action.location,
         }));
       case AppActionTypes.REMOVE_DIV:
         return state.delete(action.id);

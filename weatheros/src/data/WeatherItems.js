@@ -1,8 +1,15 @@
 import Immutable from 'immutable';
 
+
 const WeatherItems = Immutable.Record({
 	id: '',
-	temp: '',
+	otherDays: {
+		
+	},
+	currentDay: {
+		hoursArr: []
+	},
+	location: '',
 });
 
 export default WeatherItems;

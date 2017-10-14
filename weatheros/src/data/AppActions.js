@@ -2,10 +2,10 @@ import AppActionTypes from './AppActionTypes';
 import AppDispatcher from './AppDispatcher';
 
 const AppActions = {
-	addDiv(temp) {
+	addDiv(location) {
 		AppDispatcher.dispatch({
 			actionType : AppActionTypes.ADD_DIV,
-			temp,
+			location: location,
 		});
 	},
 

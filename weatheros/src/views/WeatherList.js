@@ -14,7 +14,7 @@ function WeatherList(props) {
 			            onClick={onClick}>
 			        </span>
 			        <span >
-			            {WeatherItem.temp}
+			            {WeatherItem.location}
 			        </span>
 			    </li>
 	));
