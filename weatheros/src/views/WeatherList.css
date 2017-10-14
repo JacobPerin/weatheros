@@ -1,0 +1,70 @@
+span {
+	display: inline-block;
+}
+
+li.a{
+	height: 100px;
+}
+
+.fill{
+	height: 100%;
+}
+
+.sharedSpan {
+	height: 100%;
+	width: 20%;
+	overflow: hidden;
+}
+
+div.shareA {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+div.shareB {
+	font-weight: bold;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.hourlyList {
+	height: 100px;
+	width: 10%;
+	overflow: hidden;
+}
+
+.barGraph {
+	height: 100px;
+	width: 60%;
+}
+
+span.exit{
+	width: 10%;
+	height: 100px;
+	background-image: url("remove.png");
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+}
+
+span.exit:hover {
+	background-color: red;
+}
+
+nav {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding right : 5px;
+}
+
+nav ul {
+	height: 90px;
+}
+
+nav ul {
+	overflow: hidden;
+	overflow-y: scroll;
+}

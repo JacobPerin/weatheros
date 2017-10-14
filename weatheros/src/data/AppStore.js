@@ -22,6 +22,7 @@ class AppStore extends ReduceStore {
         return state.set(id, new WeatherItems({
           id,
           temp: action.temp,
+          tempHourly : ['1 : 000', '2 : 000', '3 : 000', '4 : 000', '5 : 000', '6 : 000', '7 : 000', '8 : 000'],
         }));
       case AppActionTypes.REMOVE_DIV:
         return state.delete(action.id);
