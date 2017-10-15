@@ -3,7 +3,7 @@ span {
 }
 
 li.a{
-	height: 100px;
+	height: 200px;
 }
 
 .fill{
@@ -17,7 +17,7 @@ li.a{
 }
 
 div.shareA {
-	height: 50px;
+	height: 100px;
 	width: 100%;
 	text-align: center;
 }
@@ -29,19 +29,19 @@ div.shareB {
 }
 
 .hourlyList {
-	height: 100px;
+	height: 100%;
 	width: 10%;
 	overflow: hidden;
 }
 
 .barGraph {
-	height: 100px;
+	height: 100%;
 	width: 60%;
 }
 
 span.exit{
 	width: 10%;
-	height: 100px;
+	height: 100%;
 	background-image: url("remove.png");
 	background-size: 32px 32px;
 	background-repeat: no-repeat;
@@ -61,7 +61,7 @@ nav {
 }
 
 nav ul {
-	height: 90px;
+	height: 200px;
 }
 
 nav ul {

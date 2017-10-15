@@ -1,5 +1,6 @@
 import React from 'react';
 import './WeatherList.css';
+import LineChart from './LineChart.js';
 
 function WeatherList(props) {
 
@@ -49,12 +50,14 @@ function WeatherList(props) {
 					<div className = "fill">
 						{displayA(WeatherItem.temp, '000')}
 						{displayB(WeatherItem.tempHourly)}
-						<span className = "barGraph"></span>
+						<span className = "barGraph">
+							<LineChart />
+						</span>
 						{displayD(WeatherItem.id)}
 					</div>
 			    </li>
 	));
-	
+
 	return (
 		<section id="list">
     	<ul id="weatherList">

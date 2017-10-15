@@ -1,0 +1,24 @@
+.line {
+    fill: none;
+    stroke: #17202A;
+    stroke-width: 3px;
+
+}
+
+.axis{
+    fill:#bbc7d9;
+    opacity: 1;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+
+}
+
+.axis text {
+    font-size: 12px;
+    font-weight: bold;
+}
