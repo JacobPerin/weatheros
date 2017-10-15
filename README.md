@@ -17,6 +17,7 @@
 * [Immutable](https://facebook.github.io/immutable-js/) - No modifying data once created
 * [React](https://reactjs.org/docs/react-api.html) - View rendering of the application
 ---------
+* [d3](https://github.com/d3/d3/wiki) - Data graphing application for five-day forecast
 * [OpenWeatherMap](https://openweathermap.org/api) - Weather API
 
 ## Authors 
