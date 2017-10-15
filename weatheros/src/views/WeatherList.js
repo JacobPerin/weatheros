@@ -48,7 +48,7 @@ function WeatherList(props) {
 			(
 				<li className = "a" key={WeatherItem.id} >
 					<div className = "fill">
-						{displayA(WeatherItem.temp, '000')}
+						{displayA(WeatherItem.location, '000')}
 						{displayB(WeatherItem.tempHourly)}
 						<span className = "barGraph">
 							<LineChart />

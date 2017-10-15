@@ -6,6 +6,7 @@ import Counter from './Counter';
 import WeatherItems from './WeatherItems';
 
 
+
 class AppStore extends ReduceStore {
   constructor(){
     super(AppDispatcher);
@@ -21,7 +22,7 @@ class AppStore extends ReduceStore {
         const id = Counter.increment();
         return state.set(id, new WeatherItems({
           id,
-          temp: action.temp,
+          location: action.data.city.name,
           tempHourly : ['1 : 000', '2 : 000', '3 : 000', '4 : 000', '5 : 000', '6 : 000', '7 : 000', '8 : 000'],
         }));
       case AppActionTypes.REMOVE_DIV:
