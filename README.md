@@ -3,9 +3,11 @@
 319 Portfolio 1 : Web App that utilizes react framework w/ a weather API to create a scrollable page of divs each displaying a cities current weather as well as the 5 day forcast.
 
 ## Installing
-1. Navigate to project via git ( ... -> cd weatheros -> cd lib) 
+1. Navigate to project via git ( ... -> cd weatherOS -> cd weatheros) 
 2. npm dependencies :
-	1. npm install (node, react, flux, d3, etc.)
+	1. npm install (node, react, etc.)
+	2. npm install flux
+	3. npm install immutable
 3. npm start (Project will be hosted on localhost:3000, should redirect automaticallly)
 ## Built with
 
